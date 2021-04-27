@@ -15,8 +15,9 @@ function App() {
         onclick={(evt)=>{
           console.log('J\'ai été cliqué');
         }}
+        style={{textDecoration:'underline'}}
         couleurDeFond={'red'}
-        taillePolice={30}
+        taillePolice={24}
       />
     </div>
   );
