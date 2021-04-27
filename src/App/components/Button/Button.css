@@ -10,6 +10,6 @@
   user-select: none;
 }
 
-.Button:active {
-    background-color: greenyellow;
+.Button:hover {
+    transform: translateY(4px);
 }
