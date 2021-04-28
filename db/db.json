@@ -24,7 +24,8 @@
         "y": 500,
         "value": "Hello Word",
         "color": "#256845",
-        "underline":""
+        "underline":true,
+        "bold":false
       },
       "imageId": 0
     },
@@ -35,7 +36,9 @@
         "x": 300,
         "y": 500,
         "value": "Hello Word",
-        "color": "#256845"
+        "color": "#256845",
+        "underline":false,
+        "bold":false
       },
       "imageId": 1
     },
@@ -45,7 +48,9 @@
         "x": 300,
         "y": 500,
         "value": "Hello Papa et Maman",
-        "color": "#256845"
+        "color": "#256845",
+        "underline":false,
+        "bold":false
       },
       "imageId": 0,
       "id": 2
