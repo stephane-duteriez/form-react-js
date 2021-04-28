@@ -1,27 +1,54 @@
 {
-    "images" : [
-        {
-            "id":0,
-            "nom":"Joseph",
-            "src":"DSC04018.jpg",
-            "width":"4000",
-            "height":"6000"
-        },
-        {
-            "id":0,
-            "nom":"Natalie",
-            "src":"DSC04048.jpg",
-            "width":"4000",
-            "height":"6000"
-        }
-        
-    ],
-    "memes": [
-        {
-            "id": 0, "nom":"Hello", "text":{"x":300, "y":500, "value": "Hello Word", "color":"#256845", "imageId":0}
-        },
-        {
-            "id": 0, "nom":"Hello", "text":{"x":300, "y":500, "value": "Hello Word", "color":"#256845", "imageId":0}
-        }
-    ]
+  "images": [
+    {
+      "id": 0,
+      "nom": "Joseph",
+      "src": "DSC04018.jpg",
+      "width": "4000",
+      "height": "6000"
+    },
+    {
+      "id": 1,
+      "nom": "Natalie",
+      "src": "DSC04048.jpg",
+      "width": "4000",
+      "height": "6000"
+    }
+  ],
+  "memes": [
+    {
+      "id": 0,
+      "nom": "Hello",
+      "text": {
+        "x": 300,
+        "y": 500,
+        "value": "Hello Word",
+        "color": "#256845",
+        "underline":""
+      },
+      "imageId": 0
+    },
+    {
+      "id": 1,
+      "nom": "Hello",
+      "text": {
+        "x": 300,
+        "y": 500,
+        "value": "Hello Word",
+        "color": "#256845"
+      },
+      "imageId": 1
+    },
+    {
+      "nom": "Hello Joseph",
+      "text": {
+        "x": 300,
+        "y": 500,
+        "value": "Hello Papa et Maman",
+        "color": "#256845"
+      },
+      "imageId": 0,
+      "id": 2
+    }
+  ]
 }
