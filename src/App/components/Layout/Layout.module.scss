@@ -1,0 +1,12 @@
+.Layout {
+    display: flex;
+    height: 80vh;
+}
+
+.left {
+    flex-grow:4;
+}
+
+.right {
+    flex:1;
+}

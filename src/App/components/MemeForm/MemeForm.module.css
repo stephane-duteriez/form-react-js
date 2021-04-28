@@ -3,21 +3,43 @@
     border: 1px solid black;
 }
 
+.MemeForm input{
+    padding: 5px;
+    margin: 5px;
+}
+
+.MemeForm select{
+    padding: 5px;
+    margin: 5px;
+}
+
 .inlineContainer>* {
     display: inline;
 }
 
-.inlineContainer>input[type='number'] {
+.center input[type='number'] {
     width : 50px;
     margin-right: 1em;
 }
 .show {
     padding-top: 1em;
     padding-bottom: 2em;
+    max-width: 300px;
 }
 
 .text {
     margin : 1em;
     padding : 1em;
     border: 1px solid black;
+}
+
+.container {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.center {
+    justify-content: center;
+    display: flex;
 }
