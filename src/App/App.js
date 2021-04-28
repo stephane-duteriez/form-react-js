@@ -2,6 +2,7 @@
 import React from 'react';
 import './App.css';
 import Button from './components/Button/Button'
+import MemeForm from './components/MemeForm/MemeForm'
 
 class App extends React.Component {
   constructor(props) {
@@ -20,6 +21,9 @@ class App extends React.Component {
     return <div className="App">
         <div style={{padding:'20px'}}>Les boutons on été cliqués : {this.state.counter} fois <br/>
         {this.state.lastClickedTime && 'dernier click ' + this.state.lastClickedTime.toISOString()}</div>
+        <MemeForm>
+
+        </MemeForm><br/>
       <Button label="btn 1" onclick={(evt)=>{
         console.log("test click");
         this.setState({counter: this.state.counter + 1, 
