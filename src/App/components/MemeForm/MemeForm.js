@@ -6,7 +6,7 @@ import Button from '../Button/Button';
 const initialState = {
   name : '',
   text:{x:0,y:0,value:'', underline:false, bold:false, color:"#555555"},
-  imageId:'img/DSC04018.jpg',
+  imageId:0,
   font:"Arial"
 };
 const MemeForm = (props) => {
@@ -73,10 +73,11 @@ const MemeForm = (props) => {
       </div>
       <div className={styles.center}>
         <select id="image" onChange={(evt)=>{
-          setformContent({...formContent, imageId:evt.target.value})
+          setformContent({...formContent, imageId:parseInt(evt.target.value, 10)})
         }} value={formContent.imageId}>
-          <option value="img/DSC04018.jpg">Joseph.jpg</option>
-          <option value="img/DSC04048.jpg">Natalie.jpg</option>
+          {props.images.map((image, i)=>
+              <option key={'optionImage-'+i} value={image.id}>{image.nom}</option>
+            )}
         </select>
       </div>
       <div className={styles.show}>
@@ -98,7 +99,10 @@ const MemeForm = (props) => {
   );
 };
 
-MemeForm.propTypes = {};
+MemeForm.propTypes = {
+  onSubmit : PropTypes.func.isRequired,
+  images : PropTypes.array.isRequired,
+};
 
 MemeForm.defaultProps = {};
 

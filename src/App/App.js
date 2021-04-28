@@ -1,27 +1,38 @@
 
 import React from 'react';
 import styles from './App.css';
-import MemeForm, {initialState} from './components/MemeForm/MemeForm'
-import MemeViewer from './components/MemeViewer/MemeViewer'
-import Layout from './components/Layout/Layout'
+import MemeForm, {initialState} from './components/MemeForm/MemeForm';
+import MemeViewer from './components/MemeViewer/MemeViewer';
+import Layout from './components/Layout/Layout';
+import {REST_ADR, REST_ENDPOINT} from './configue/configue';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentMeme : initialState
+      currentMeme : initialState, images: []
     }
   }
   componentDidMount() {
-    this.setState({
-      currentMeme : initialState
-    })
+    fetch(`${REST_ADR}${REST_ENDPOINT.IMAGES}`)
+      .then(f=>f.json())
+      .then(o=>{
+        this.setState({
+          images : o
+        })
+        return o;
+      })
+    
   }
   render() {
     return <div className="App">
       <Layout>
-        <MemeViewer currentMeme={this.state.currentMeme}></MemeViewer>
-        <MemeForm formContent={this.state.currentMeme} onSubmit={(currentMeme)=>this.setState({currentMeme : currentMeme})}></MemeForm>
+        <MemeViewer currentMeme={{...this.state.currentMeme, image:this.state.images.find((img)=>img.id===this.state.currentMeme.imageId)}}></MemeViewer>
+        <MemeForm 
+          formContent={this.state.currentMeme}
+          onSubmit={(currentMeme)=>this.setState({currentMeme : currentMeme})}
+          images={this.state.images}
+          ></MemeForm>
       </Layout>
     </div>
   }

@@ -13,6 +13,20 @@
       "src": "DSC04048.jpg",
       "width": "4000",
       "height": "6000"
+    },
+    {
+        "id": 2,
+        "nom": "Natalie&Joseph",
+        "src": "DSC04137.jpg",
+        "width": "4000",
+        "height": "6000"
+    },
+    {
+        "id": 3,
+        "nom": "Joseph 2",
+        "src": "DSC03602.jpg",
+        "width": "6000",
+        "height": "4000"
     }
   ],
   "memes": [
