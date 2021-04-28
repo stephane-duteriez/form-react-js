@@ -2,3 +2,22 @@
     padding : 20px;
     border: 1px solid black;
 }
+
+.inlineContainer>* {
+    display: inline;
+}
+
+.inlineContainer>input[type='number'] {
+    width : 50px;
+    margin-right: 1em;
+}
+.show {
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+.text {
+    margin : 1em;
+    padding : 1em;
+    border: 1px solid black;
+}
