@@ -5,6 +5,8 @@
 
 .left {
     flex-grow:4;
+    display: flex;
+    justify-content: center;
 }
 
 .right {
