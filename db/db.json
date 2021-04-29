@@ -54,7 +54,7 @@
         "underline":false,
         "bold":false
       },
-      "imageId": 1
+      "imageId": 3
     },
     {
       "nom": "Hello Joseph",
@@ -66,8 +66,47 @@
         "underline":false,
         "bold":false
       },
-      "imageId": 0,
+      "imageId": 2,
       "id": 2
+    },
+    {
+      "nom": "Hello Joseph",
+      "text": {
+        "x": 300,
+        "y": 500,
+        "value": "Hello Papa et Maman",
+        "color": "#256845",
+        "underline":false,
+        "bold":false
+      },
+      "imageId": 2,
+      "id": 3
+    },
+    {
+      "nom": "Hello Joseph",
+      "text": {
+        "x": 300,
+        "y": 500,
+        "value": "Hello Papa et Maman",
+        "color": "#256845",
+        "underline":false,
+        "bold":false
+      },
+      "imageId": 1,
+      "id": 4
+    },
+    {
+      "nom": "Hello Joseph",
+      "text": {
+        "x": 300,
+        "y": 500,
+        "value": "Hello Papa et Maman",
+        "color": "#256845",
+        "underline":false,
+        "bold":false
+      },
+      "imageId": 2,
+      "id": 5
     }
   ]
 }

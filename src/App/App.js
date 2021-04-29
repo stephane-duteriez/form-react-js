@@ -4,7 +4,9 @@ import styles from './App.css';
 import MemeForm, {initialState} from './components/MemeForm/MemeForm';
 import MemeViewer from './components/MemeViewer/MemeViewer';
 import Layout from './components/Layout/Layout';
+import ListMemes from './components/ListMemes/ListMemes';
 import {REST_ADR, REST_ENDPOINT} from './configue/configue';
+import LayoutFlow from './components/LayoutFlow/LayoutFlow';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,7 +35,11 @@ class App extends React.Component {
           onSubmit={(currentMeme)=>this.setState({currentMeme : currentMeme})}
           images={this.state.images}
           ></MemeForm>
+        
       </Layout>
+      <ListMemes images={this.state.images}></ListMemes>
+
+      
     </div>
   }
 }
