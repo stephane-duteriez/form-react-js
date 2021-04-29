@@ -15,18 +15,39 @@
       "height": "6000"
     },
     {
-        "id": 2,
-        "nom": "Natalie&Joseph",
-        "src": "DSC04137.jpg",
-        "width": "4000",
-        "height": "6000"
+      "id": 2,
+      "nom": "Natalie&Joseph",
+      "src": "DSC04137.jpg",
+      "width": "4000",
+      "height": "6000"
     },
     {
-        "id": 3,
-        "nom": "Joseph 2",
-        "src": "DSC03602.jpg",
-        "width": "6000",
-        "height": "4000"
+      "id": 3,
+      "nom": "Joseph 2",
+      "src": "DSC03602.jpg",
+      "width": "6000",
+      "height": "4000"
+    },
+    {
+      "id": 4,
+      "nom": "Joseph 3",
+      "src": "DSC02757.jpg",
+      "width": "6000",
+      "height": "4000"
+    },
+    {
+      "id": 5,
+      "nom": "Natalie 2",
+      "src": "DSC02908.jpg",
+      "width": "6000",
+      "height": "4000"
+    },
+    {
+      "id": 6,
+      "nom": "Joseph 5",
+      "src": "DSC02526.jpg",
+      "width": "6000",
+      "height": "4000"
     }
   ],
   "memes": [
@@ -37,9 +58,9 @@
         "x": 300,
         "y": 500,
         "value": "Hello Word",
-        "color": "#256845",
-        "underline":true,
-        "bold":false
+        "color": "#8aa3ff",
+        "underline": true,
+        "bold": false
       },
       "imageId": 0
     },
@@ -50,9 +71,11 @@
         "x": 300,
         "y": 500,
         "value": "Hello Word",
-        "color": "#256845",
-        "underline":false,
-        "bold":false
+        "color": "#c21414",
+        "underline": false,
+        "bold": false,
+        "font": "Ink Free",
+        "underliner": true
       },
       "imageId": 3
     },
@@ -62,9 +85,9 @@
         "x": 300,
         "y": 500,
         "value": "Hello Papa et Maman",
-        "color": "#256845",
-        "underline":false,
-        "bold":false
+        "color": "#f0f0f0",
+        "underline": false,
+        "bold": false
       },
       "imageId": 2,
       "id": 2
@@ -72,14 +95,14 @@
     {
       "nom": "Hello Joseph",
       "text": {
-        "x": 300,
-        "y": 500,
+        "x": 2496,
+        "y": 160,
         "value": "Hello Papa et Maman",
-        "color": "#256845",
-        "underline":false,
-        "bold":false
+        "color": "#ff2424",
+        "underline": false,
+        "bold": true
       },
-      "imageId": 2,
+      "imageId": 4,
       "id": 3
     },
     {
@@ -88,9 +111,11 @@
         "x": 300,
         "y": 500,
         "value": "Hello Papa et Maman",
-        "color": "#256845",
-        "underline":false,
-        "bold":false
+        "color": "#b4f9eb",
+        "underline": false,
+        "bold": false,
+        "font": "Ink Free",
+        "underliner": true
       },
       "imageId": 1,
       "id": 4
@@ -101,12 +126,44 @@
         "x": 300,
         "y": 500,
         "value": "Hello Papa et Maman",
-        "color": "#256845",
-        "underline":false,
-        "bold":false
+        "color": "#ffdc2e",
+        "underline": false,
+        "bold": true,
+        "underliner": true,
+        "font": "Ink Free"
       },
       "imageId": 2,
       "id": 5
+    },
+    {
+      "id": 6,
+      "name": "erf",
+      "text": {
+        "x": 1434,
+        "y": 1541,
+        "value": "Super !!!!",
+        "underline": false,
+        "bold": false,
+        "color": "#dedede",
+        "font": "Ink Free"
+      },
+      "imageId": 6,
+      "font": "Arial",
+      "nom": "Super"
+    },
+    {
+      "id": 7,
+      "nom": "Hello",
+      "text": {
+        "x": 300,
+        "y": 500,
+        "value": "Hello Word",
+        "color": "#8aa3ff",
+        "underline": true,
+        "bold": false,
+        "underliner": true
+      },
+      "imageId": 0
     }
   ]
 }

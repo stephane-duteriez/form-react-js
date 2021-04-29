@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './MyNavbar.module.scss';
 import { Navbar, Nav } from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
 import '../../../../node_modules/bootstrap/dist/css/bootstrap.css'
 
 const MyNavbar = () => (
@@ -11,9 +12,16 @@ const MyNavbar = () => (
         Meme generator
       </Navbar.Brand>
       <Nav className="mr-auto" activeKey="/thumbnail">
-        onSelect={(selectedKey)=>console.log(selectedKey)}
-        <Nav.Link href="/thumbnail">Thumbnail</Nav.Link>
-        <Nav.Link href="/editor">Nouveau meme</Nav.Link>
+        <Nav.Item>
+          <LinkContainer to="/thumbnail">
+           <Nav.Link>Thumbnail</Nav.Link>
+          </LinkContainer>
+        </Nav.Item>
+        <Nav.Item>
+          <LinkContainer to="/editor">
+          <Nav.Link >Nouveau meme</Nav.Link>
+          </LinkContainer>
+        </Nav.Item>
       </Nav>
     </Navbar>
   </div>

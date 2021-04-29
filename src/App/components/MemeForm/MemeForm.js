@@ -3,23 +3,33 @@ import PropTypes from 'prop-types';
 import styles from './MemeForm.module.css';
 import Button from '../Button/Button';
 import store, {initialState, REDUCER_ACTIONS} from '../../store/store';
+import { withRouter } from 'react-router-dom'
 
-const MemeForm = () => {
+const MemeForm = (props) => {
   const [formContent, setformContent] = useState(initialState.currentMeme); 
   const [images, setImages] = useState(initialState.images);
   useEffect(() => {
+    setImages(store.getState().images)
     store.subscribe(()=>{
-      setImages(store.getState().images)
+      setImages(store.getState().images);
+      setformContent(store.getState().currentMeme);
     })
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    if (undefined!==props.match.params.id) {
+      store.dispatch({type:REDUCER_ACTIONS.SET_CURRENT_MEME_ID, value:parseInt(props.match.params.id, 10)});
+    }
+  }, [store.getState().images, store.getState().memes]);
+
   return (
     <form className={styles.MemeForm} data-testid="MemeForm">
     <div className={styles.container}>
       <div className={styles.center}>
         <input type="text" placeholder="nom du meme" id="name"
-        value={formContent.name}
+        value={formContent.nom}
           onChange={(evt)=>{
-            setformContent({...formContent, name:evt.target.value})
+            setformContent({...formContent, nom:evt.target.value})
           }}
         />
       </div>
@@ -92,11 +102,13 @@ const MemeForm = () => {
         setformContent(initialState.currentMeme);
         store.dispatch({type: REDUCER_ACTIONS.CLEAR_CURRENT})
       }}/>
-      <Button label="Ok" color="#FFFFFF" onclick={(evt)=>{
+      <Button label="View" color="#FFFFFF" onclick={(evt)=>{
         store.dispatch({type: REDUCER_ACTIONS.SET_CURRENT, value:formContent})
       }}/>
+      <Button label={formContent && formContent.id?'SAVE':'ADD'} color="#FFFFFF" onclick={(evt)=>{
+        store.dispatch({type: REDUCER_ACTIONS.CHANGE_MEME, value:formContent})
+      }}/>
       </div>
-
     </div>      
     </form>
   );
@@ -106,4 +118,4 @@ MemeForm.propTypes = {};
 
 MemeForm.defaultProps = {};
 
-export default MemeForm;
+export default withRouter(MemeForm);
