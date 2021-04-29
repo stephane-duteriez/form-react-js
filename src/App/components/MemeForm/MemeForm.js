@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './MemeForm.module.css';
 import Button from '../Button/Button';
+import store, {initialState, REDUCER_ACTIONS} from '../../store/store';
 
-const initialState = {
-  name : '',
-  text:{x:0,y:0,value:'', underline:false, bold:false, color:"#555555"},
-  imageId:0,
-  font:"Arial"
-};
-const MemeForm = (props) => {
-  const [formContent, setformContent] = useState(initialState); 
+const MemeForm = () => {
+  const [formContent, setformContent] = useState(initialState.currentMeme); 
+  const [images, setImages] = useState(initialState.images);
+  useEffect(() => {
+    store.subscribe(()=>{
+      setImages(store.getState().images)
+    })
+  }, [])
   return (
     <form className={styles.MemeForm} data-testid="MemeForm">
     <div className={styles.container}>
@@ -31,11 +32,11 @@ const MemeForm = (props) => {
           </div>
 
         <div className={styles.inlineContainer, styles.center}>
-          <input  type="number" value={formContent.x} placeholder="X"
+          <input  type="range" min="1" max="6000" value={formContent.x} placeholder="X"
             onChange={(evt)=>{
               setformContent({...formContent, text:{...formContent.text, x:parseInt(evt.target.value)}});
             }}></input>
-          <input  type="number" value={formContent.y} placeholder="Y"
+          <input  type="range" min="1" max="6000" value={formContent.y} placeholder="Y"
             onChange={(evt)=>{
               setformContent({...formContent, text:{...formContent.text, y:parseInt(evt.target.value)}});
             }}></input>
@@ -75,7 +76,8 @@ const MemeForm = (props) => {
         <select id="image" onChange={(evt)=>{
           setformContent({...formContent, imageId:parseInt(evt.target.value, 10)})
         }} value={formContent.imageId}>
-          {props.images.map((image, i)=>
+          <option value=""></option>
+          {images.map((image, i)=>
               <option key={'optionImage-'+i} value={image.id}>{image.nom}</option>
             )}
         </select>
@@ -87,10 +89,11 @@ const MemeForm = (props) => {
       </div>
       <div className={styles.center}>
       <Button label="reset" color="#FFFFFF" onclick={(evt)=>{
-        setformContent(initialState)
+        setformContent(initialState.currentMeme);
+        store.dispatch({type: REDUCER_ACTIONS.CLEAR_CURRENT})
       }}/>
       <Button label="Ok" color="#FFFFFF" onclick={(evt)=>{
-        props.onSubmit(formContent);
+        store.dispatch({type: REDUCER_ACTIONS.SET_CURRENT, value:formContent})
       }}/>
       </div>
 
@@ -99,12 +102,8 @@ const MemeForm = (props) => {
   );
 };
 
-MemeForm.propTypes = {
-  onSubmit : PropTypes.func.isRequired,
-  images : PropTypes.array.isRequired,
-};
+MemeForm.propTypes = {};
 
 MemeForm.defaultProps = {};
 
 export default MemeForm;
-export {initialState};

@@ -1,21 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Navbar.module.scss';
-import { Navbar } from 'react-bootstrap';
+import styles from './MyNavbar.module.scss';
+import { Navbar, Nav } from 'react-bootstrap';
+import '../../../../node_modules/bootstrap/dist/css/bootstrap.css'
 
 const MyNavbar = () => (
-  <div className={styles.myNavbar} data-testid="myNavbar">
+  <div className={styles.MyNavbar} data-testid="MyNavbar">
     <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="#home">
-        <img
-          alt=""
-          src="/logo.svg"
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
-        />{' '}
-        React Bootstrap
+        Meme generator
       </Navbar.Brand>
+      <Nav className="mr-auto" activeKey="/thumbnail">
+        onSelect={(selectedKey)=>console.log(selectedKey)}
+        <Nav.Link href="/thumbnail">Thumbnail</Nav.Link>
+        <Nav.Link href="/editor">Nouveau meme</Nav.Link>
+      </Nav>
     </Navbar>
   </div>
 );
