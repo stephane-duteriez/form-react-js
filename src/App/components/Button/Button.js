@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Button.css';
 
 function Button(props) {
-    return <div 
+    return <div data-testid="Button"
         style={{...props.style,
             backgroundColor : props.couleurDeFond,
             fontSize : props.taillePolice + 'px'

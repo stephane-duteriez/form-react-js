@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Navbar from './Navbar';
+import MyNavbar from './MyNavbar';
 
-describe('<Navbar />', () => {
+describe('<MyNavbar />', () => {
   test('it should mount', () => {
-    render(<Navbar />);
+    render(<MyNavbar />);
     
     const navbar = screen.getByTestId('Navbar');
 

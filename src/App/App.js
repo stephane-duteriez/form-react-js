@@ -29,7 +29,7 @@ class App extends React.Component {
     });
   }
   render() {
-    return <div className="App">
+    return <div className="App" data-testid="MyNavbar">
       <MyNavbar></MyNavbar>
       <Switch>
         <Route path="/" exact>
